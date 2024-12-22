@@ -4,24 +4,35 @@
 　　　　　　　　　　　　　　　　　　　　　by KenKen & Katsumi
 
 MachiKania is an open platform for microcontrollers with a BASIC compiler.
-MachiKania type P is equipped with a Raspberry Pi Pico (Pico 2, Pico W) and a small LCD module to realize a portable BASIC execution environment.
-External devices such as general-purpose I/O, SPI, and I2C can be easily controlled from BASIC.
+MachiKania type P is equipped with a Raspberry Pi Pico (Pico 2, Pico W) and an 
+NTSC video output circuitry to provide a portable BASIC execution environment.
+External devices such as general-purpose I/O, SPI, and I2C can be easily 
+controlled from BASIC.
+
+
 
 The on-board BASIC compiler is KM-BASIC, which is a 32-bit integer BASIC.
 It also supports single-precision floating-point arithmetic.
 Structured programming and object-oriented support are also available.
-BASIC programs can be created on a PC or other device and transferred via MMC or SD card, or using a USB cable and dedicated software.
-It is also possible to connect a USB keyboard and directly edit and execute the program.
+BASIC programs can be created on a PC or other device and transferred 
+via MMC or SD card, or using a USB cable and dedicated software.
+It is also possible to connect a USB keyboard and directly edit and execute 
+the program.
+
 
 For operating circuits and other details, please refer to the following Web site
-http://www.ze.em-net.ne.jp/~kenken/machikania/typep.html
+http://www.ze.em-net.ne.jp/~kenken/machikania/typepu.html
 
 
-The included executable file (uf2 file) can be freely used for non-commercial use only, free of charge.
-It is also possible to publish your work to the public. In this case, please mention that you are using the MachiKania series on your website, in the instructions, or in any other place.
-Please note that we are not responsible for any damage or loss caused by the use of the MachiKania series.
+The included executable file (uf2 file) can be freely used for non-commercial 
+use only, free of charge.
+It is also possible to publish your work to the public. In this case, 
+please mention that you are using the MachiKania series on your website, 
+in the instructions, or in any other place.
+Please note that we are not responsible for any damage or loss caused 
+by the use of the MachiKania series.
 
-<machikania-p.zip file contents
+<machikania-pu.zip file contents>
 
 [documents] directory
 　Stores documents
@@ -41,60 +52,87 @@ Please note that we are not responsible for any damage or loss caused by the use
 　- pcconnect-e.txt
 　　How to transfer files from your PC to MachiKania
 
-　- shematic.png
-　　MachiKania type P schematic
+　- shematic_ntsc.png
+　- shematic_xiao.png
+　　MachiKania type PU schematics
 
 　- wifi.txt
 　- wifi-e.txt
 　　Reference manual to use WiFi connection with Raspberry Pi Pico W
 
-[pico_ili9341] directory
-　Stores binaries used when combining Raspberry Pi Pico and ILI9341 LCD
-　- phyllosoma.uf2
-　　MachiKania type P BASIC system (version supporting PC connect function)
+[pico_ntsc] directory
+　Stores binaries when using Raspberry Pi Pico
+　- puerulus.uf2
+　　MachiKania type PU BASIC system (version supporting PC connect function)
 　　Connects the PC and Raspberry Pi Pico via USB and writes
 　　PC connect function allows BASIC programs to be transferred from a PC connected via USB cable.
 
-　- phyllosoma_kb.uf2
-　　MachiKania type P BASIC system main unit (USB keyboard connection version)
+　- puerulus_kb.uf2
+　　MachiKania type PU BASIC system main unit (USB keyboard connection version)
 　　Connects a PC and Raspberry Pi Pico via USB cable and writes
 　　Directly edit and execute BASIC programs with the built-in editor and USB keyboard
 
-[pico_w_ili9341] directory
-　Stores binaries used when combining Raspberry Pi Pico W and ILI9341 LCD
-　- phyllosoma.uf2
-　　MachiKania type P BASIC system (version supporting PC connect function)
-　　Connects the PC and Raspberry Pi Pico via USB and writes
-　　PC connect function allows BASIC programs to be transferred from a PC connected via USB cable.
-　　WiFi connection is available.
-
-　- phyllosoma_kb.uf2
-　　MachiKania type P BASIC system main unit (USB keyboard connection version)
-　　Connects a PC and Raspberry Pi Pico via USB cable and writes
-　　Directly edit and execute BASIC programs with the built-in editor and USB keyboard
-　　WiFi connection is available.
-
-[pico2_ili9341] directory
-　Stores binaries used when combining Raspberry Pi Pico 2 and ILI9341 LCD
-　- phyllosoma.uf2
-　　MachiKania type P BASIC system (version supporting PC connect function)
+[pico_w_ntsc] directory
+　Stores binaries when using Raspberry Pi Pico W
+　- puerulus.uf2
+　　MachiKania type PU BASIC system (version supporting PC connect function)
 　　Connects the PC and Raspberry Pi Pico via USB and writes
 　　PC connect function allows BASIC programs to be transferred from a PC connected via USB cable.
 　　WiFi connection is available.
 
-　- phyllosoma_kb.uf2
-　　MachiKania type P BASIC system main unit (USB keyboard connection version)
+　- puerulus_kb.uf2
+　　MachiKania type PU BASIC system main unit (USB keyboard connection version)
 　　Connects a PC and Raspberry Pi Pico via USB cable and writes
 　　Directly edit and execute BASIC programs with the built-in editor and USB keyboard
 　　WiFi connection is available.
 
-[pico_ili9341/embed] directory
-[pico_w_ili9341/embed] directory
-[pico2_ili9341/embed] directory
-　Stores tools that allow you to run BASIC programs without an SD card, e.g. for embedded applications
+[pico2_ntsc] directory
+　Stores binaries when using Raspberry Pi Pico 2
+　- puerulus.uf2
+　　MachiKania type PU BASIC system (version supporting PC connect function)
+　　Connects the PC and Raspberry Pi Pico via USB and writes
+　　PC connect function allows BASIC programs to be transferred from a PC connected via USB cable.
+
+　- puerulus_kb.uf2
+　　MachiKania type PU BASIC system main unit (USB keyboard connection version)
+　　Connects a PC and Raspberry Pi Pico via USB cable and writes
+　　Directly edit and execute BASIC programs with the built-in editor and USB keyboard
+
+[xiao_ntsc] directory
+　Stores binaries when using XIAO-RP2040, TINY2040, or RP2040-Zero
+　- puerulus.uf2
+　　MachiKania type PU BASIC system (version supporting PC connect function)
+　　Connects the PC and micro-contoller board via USB and writes
+　　PC connect function allows BASIC programs to be transferred from a PC connected via USB cable.
+
+　- puerulus_kb.uf2
+　　MachiKania type PU BASIC system main unit (USB keyboard connection version)
+　　Connects a PC and micro-contoller board via USB cable and writes
+　　Directly edit and execute BASIC programs with the built-in editor and USB keyboard
+
+[xiao_rp2350_ntsc] directory
+　Stores binaries when using XIAO-RP2350, TINY2350, or RP2350-Zero
+　- puerulus.uf2
+　　MachiKania type PU BASIC system (version supporting PC connect function)
+　　Connects the PC and micro-contoller board via USB and writes
+　　PC connect function allows BASIC programs to be transferred from a PC connected via USB cable.
+
+　- puerulus_kb.uf2
+　　MachiKania type PU BASIC system main unit (USB keyboard connection version)
+　　Connects a PC and micro-contoller board via USB cable and writes
+　　Directly edit and execute BASIC programs with the built-in editor and USB keyboard
+
+[pico_ntsc/embed] directory
+[pico_w_ntsc/embed] directory
+[pico2_ntsc/embed] directory
+[xiao_ntsc/embed] directory
+[xiao_rp2350_ntsc/embed] directory
+　Stores tools that allow you to run BASIC programs without an SD card, 
+　e.g. for embedded applications
 
 [pcconnect] directory
-　Contains tools for transferring files in a PC to MachiKania via USB cable
+　Contains tools for transferring files in a PC to MachiKania via USB 
+　cable
 
 readme.txt
 　This file
@@ -102,16 +140,18 @@ readme.txt
 readmeLib.txt
 　Library documentation in the LIB directory
 
-<Copy all files and directories below here to the root directory of the SD card
+<Copy all files and directories below here to the root directory of the SD card>
 
 MACHIKAP.INI
-　Initialization file for MachiKania type P
+　Initialization file for MachiKania type PU (shared with type P)
 
 [LIB] directory
-　Class library that can be easily used from BASIC programs Copy the entire LIB directory to the root of the SD card and use it
+　Class library that can be easily used from BASIC programs. Copy the entire 
+　LIB directory to the root of the SD card and use it
 
 [samples] directory
-　BASIC sample programs. Copy these files to the root directory of the SD card (or create any subdirectory and copy)
+　BASIC sample programs. Copy these files to the root directory of the 
+　SD card (or create any subdirectory and copy)
 
 　3DWAVE.BAS
 　　3D graphic of ripples
@@ -176,7 +216,7 @@ MACHIKAP.INI
 
 
 ------------------------------------------------------------------------
-MachiKania type P BASIC System Revision History
+MachiKania type PU BASIC System Revision History
 
 Phyllosoma 1.50/KM-1507 (2024.12.28)
 　First public version
