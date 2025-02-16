@@ -8,6 +8,10 @@ We are not responsible for any damage or loss caused by the use of this software
 
 <machikania-p2.zip file contents>
 
+(As of ver 1.5.1, the xiao_embed and xiao_rp2350_embed directories have been removed. 
+The similar functionality has been integrated into the ILI9488 embed version.
+Please edit MACHIKAP.INI for it.)
+
 [LIB] directory
 　Contains additinal class library
 　-[GEN3O]
@@ -62,29 +66,3 @@ We are not responsible for any damage or loss caused by the use of this software
 [pico2_ili9488/embed] directory
 　Stores tools to run BASIC programs without MMC/SD card for embedded applications.
 　tools to run BASIC programs without an MMC/SD card, such as for embedded applications.
-
-[xiao_embed] directory
-　Stores binaries used for embedding in Seeed XIAO RP2040.
-　-phyllosoma.uf2
-　　MachiKania type P BASIC system (without USB keyboard connection)
-　　Connect a PC and Seeed XIAO RP2040 via USB for transfer the uf2 file
-　　Embed MACHIKAP.BAS etc. by convert.php
-
-　-phyllosoma_kb.uf2
-　　MachiKania type P BASIC system main unit (USB keyboard connection compatible version)
-　　Connect an PC and Seeed XIAO RP2040 via for transfer the uf2 file
-　　Embed MACHIKAP.BAS etc. by convert.php
-　　USB keyboard can be used in BASIC program
-
-[xiao_rp2350_embed] directory
-　Stores binaries used for embedding in Seeed XIAO RP2350.
-　-phyllosoma.uf2
-　　MachiKania type P BASIC system (without USB keyboard connection)
-　　Connect a PC and Seeed XIAO RP2350 via USB for transfer the uf2 file
-　　Embed MACHIKAP.BAS etc. by convert.php
-
-　-phyllosoma_kb.uf2
-　　MachiKania type P BASIC system main unit (USB keyboard connection compatible version)
-　　Connect a PC and Seeed XIAO RP2350 via USB for transfer the uf2 file
-　　Embed MACHIKAP.BAS etc. by convert.php
-　　USB keyboard can be used in BASIC program
