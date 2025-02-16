@@ -279,4 +279,5 @@ Phyllosoma 1.50/KM-1507 (2024.12.28)
 
 Phyllosoma 1.51/KM-1508 (2025.2.22)
 Å@Changed pin assignments for SPI, I2C, and UART to be freely configurable in MACHIKAP.INI.
+Å@Distribution of XIAO embed version was terminated due to the availability of MACHIKAP.INI to configure pin assignments.
 Å@Fixed a problem with REGEXP in the class library that caused a memory error when used continuously.

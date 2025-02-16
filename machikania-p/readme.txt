@@ -285,4 +285,5 @@ Phyllosoma 1.50/KM-1507 (2024.12.28)
 
 Phyllosoma 1.51/KM-1508 (2025.2.22)
 　・SPI・I2C・UART用のピン配置を、MACHIKAP.INIで自由に設定できるように変更。
+　・ピン配置をMACHIKAP.INIで設定できる事に伴い、XIAO embed版の配布を終了。
 　・クラスライブラリーのREGEXPで、連続使用時にメモリーエラーが出る不具合を修正。

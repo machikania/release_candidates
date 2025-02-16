@@ -9,8 +9,8 @@ MachiKaniaシリーズを利用していることについてもWebサイトや
 ＜machikania-p2.zipファイルコンテンツ＞
 
 （ver 1.5.1より、xiao_embed及びxiao_rp2350_embedディレクトリーは無くなり、
-同様の機能はILI9488用のembed版に統合されました。MACHIKAP.INIの設定で同じ
-ことができます。）
+同様の機能はILI9488用のembed版に統合されました。MACHIKAP.INIの設定でSPI・
+I2C・UART用のピン配置を変更することができます。）
 
 [LIB]ディレクトリ
 　追加のクラスライブラリー

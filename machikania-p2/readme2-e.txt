@@ -10,7 +10,7 @@ We are not responsible for any damage or loss caused by the use of this software
 
 (As of ver 1.5.1, the xiao_embed and xiao_rp2350_embed directories have been removed. 
 The similar functionality has been integrated into the ILI9488 embed version.
-Please edit MACHIKAP.INI for it.)
+The pin assignments for SPI, I2C, and UART can be configured in MACHIKAP.INI.)
 
 [LIB] directory
 　Contains additinal class library
