@@ -1,0 +1,14 @@
+RP2350-LCD-1.47には標準でMMC/SDカードスロットがありますので、embedバージョンのバイナリーは用意していません。必要なら、config.cmakeで、次の２つの行のコメントアウト(#)を外して有効にし、ビルドしてください。
+
+	set(MACHIKANIA_DEBUG_MODE 1)
+	set(MACHIKANIA_BUILD rp2350_lcd_1_47)
+
+なお、ビルドするには、cmakeのパラメーターに「-DPICO_BOARD=pico2 -DPICO_PLATFORM=rp2350-arm-s0」を追加してください。
+
+
+RP2350-LCD-1.47 comes with an MMC/SD card slot by default, so we do not provide an embed version of the binary. If needed, please enable it by uncommenting (#) the following two lines in config.cmake and then build.
+
+	set(MACHIKANIA_DEBUG_MODE 1)
+	set(MACHIKANIA_BUILD rp2350_lcd_1_47)
+
+To build, add the parameters "-DPICO_BOARD=pico2 -DPICO_PLATFORM=rp2350-arm-s" to cmake.

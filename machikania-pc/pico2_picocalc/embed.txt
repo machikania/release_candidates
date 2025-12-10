@@ -1,0 +1,14 @@
+PicoCalcには標準でMMC/SDカードスロットがありますので、embedバージョンのバイナリーは用意していません。必要なら、config.cmakeで、次の２つの行のコメントアウト(#)を外して有効にし、ビルドしてください。
+
+	set(MACHIKANIA_DEBUG_MODE 1)
+	set(MACHIKANIA_BUILD pico_picocalc)
+
+なお、Pico 2用にビルドするには、cmakeのパラメーターに「-DPICO_BOARD=pico2 -DPICO_PLATFORM=rp2350-arm-s0」を追加してください。
+
+
+PicoCalc comes with an MMC/SD card slot by default, so we do not provide an embed version of the binary. If needed, please enable it by uncommenting (#) the following two lines in config.cmake and then build.
+
+	set(MACHIKANIA_DEBUG_MODE 1)
+	set(MACHIKANIA_BUILD pico_picocalc)
+
+To build for Pico 2, add the parameters "-DPICO_BOARD=pico2 -DPICO_PLATFORM=rp2350-arm-s" to cmake.
