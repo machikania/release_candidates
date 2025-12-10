@@ -1,6 +1,6 @@
 <Class name and version>
 WGET
-ver 0.3.2
+ver 0.4.0
 
 <File name>
 WGET.BAS
@@ -21,6 +21,9 @@ None
 
 
 <Public static methods>
+WGET::IGNOREREDIRECT([x])
+	Specifies whether to ignore redirects when the HTTP response status is "30x". If x=1, redirects are ignored. If x=0, redirects are followed. If omitted, the behavior defaults to x=1 (redirects are ignored).
+
 WGET::FORSTRING$(x$[,y$])
 	Connects to the specified URL and returns the downloaded data as a string.
 	Specify the URL in x$. If using the POST method, specify the string to be sent to the server in y$.
@@ -47,6 +50,8 @@ WGET::ADDRHEADER(x$)
 	When adding multi-line information, append CRLF to the end of each line.
 	The transmission information specified here is only valid for a single execution of a FORxxx method, so if using multiple FORxxx methods, this method must be called for each one.
 
+WGET::GETSTATUS()
+	Returns the status code of the most recent HTTP response (such as 200 or 404).
 
 <Usage Example>
 useclass WGET
