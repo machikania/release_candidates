@@ -1,4 +1,4 @@
-　　　　　　　　　　　　　　　　　　　　　　　　　　2025.12.27
+　　　　　　　　　　　　　　　　　　　　　　　　　　2026.6.xx
 　Raspberry Pi Pico用BASIC実行環境オープンプラットフォーム
 　　　　　　　　「MachiKania type P」
 　　　　　　　　　　　　　　　　　　　　　by KenKen & Katsumi
@@ -11,8 +11,8 @@ MachiKania type PではRaspberry Pi Pico (Pico 2, Pico W)と小型
 汎用I/OやSPI、I2Cといった外部機器の制御もBASICから簡単に行う
 ことが可能です。
 
-このドキュメントでは、Waveshare RP2350-LCD-1.47（以降  
-RP2350-LCD-1.47と記載）用のMachiKaniaについて述べます。
+このドキュメントでは、Waveshare RP2350-Touch-LCD-2（以降  
+RP2350-LCD-2と記載）用のMachiKaniaについて述べます。
 
 搭載しているBASICコンパイラはKM-BASICです。KM-BASICは32bit
 整数型のBASICです。
@@ -31,22 +31,22 @@ MachiKaniaシリーズを利用していることについてもWebサイトや
 なお、ご利用によって生じた被害や損害については責任を負いかねます。
 
 
-RP2350-LCD-1.47 対応版のMachiKaniaの使用については、以下の点に注意し
+RP2350-LCD-2 対応版のMachiKaniaの使用については、以下の点に注意し
 てください。
 
 
 ＜MACHIKAP.INI＞
 
-MachiKaniaをRP2350-LCD-1.47で正常動作させる為に、同梱のMACHIKAP.INIを、
+MachiKaniaをRP2350-LCD-2で正常動作させる為に、同梱のMACHIKAP.INIを、
 必ずMMC/SDカードのルートに配置してください。
 
 
 ＜キーボード＞
 
-RP2350-LCD-1.47では、I/Oポートを接続しなければ、キーボードが唯一の入力
-デバイスです。USB-OTGケーブルを用いて、USBキーボードを接続してください。
-USB-OTGケーブルは、Type-Cで電源入力付きのものを利用して下さい。
-なお、電源はRP2350-LCD-1.47の5VピンとGNDピン（10、11番ピン）からも供給可能です。
+RP2350-LCD-2では、I/Oポートを接続しなければ、タッチパネル以外にはキーボードが
+唯一の入力デバイスです。USB-OTGケーブルを用いて、USBキーボードを接続してくだ
+さい。USB-OTGケーブルは、Type-Cで電源入力付きのものを利用して下さい。
+なお、電源はRP2350-LCD-2の5VピンとGNDピン（15、16番ピン）からも供給可能です。
 
 一般的な使用には、USBキーボード対応のphyllosoma_kb.uf2をインス
 トールしてください。phyllosoma.uf2は、USBキーボードを使用せず、
@@ -57,7 +57,7 @@ USB-OTGケーブルは、Type-Cで電源入力付きのものを利用して下�
 ＜ボタン＞
 
 MachiKaniaは、上下左右とFire/Startの、６つのボタンを使って操作しま
-す。RP2350-LCD-1.47にはこれらのボタンが無いので、キーボードでエミュ
+す。RP2350-LCD-2にはこれらのボタンが無いので、キーボードでエミュ
 レートしています。デフォルトでは、上下左右キーと、Fireがスペース
 キー、Startが改行キーに対応しています。これらの対応付けを変更す
 る際は、MACHIKAP.INIを編集してください。「EMULATEBUTTONUP=」など
@@ -75,24 +75,35 @@ BASICプログラムを実行途中で停止したい場合、Pauseキーまた�
 どを一切使わないループの中などでは、停止しない場合もあります。
 
 
-＜液晶ディスプレイ＞
+＜タッチパネルと加速度センサー＞
 
-RP2350-LCD-1.47の液晶ディスプレイはコーナーが丸くなっているため、
-四隅の表示が欠けていることにご注意ください。
+RP2350-LCD-2はタッチパネルと加速度センサーが搭載されており、それぞれ
+CST816D, QMI8658というチップで制御されています。MachiKania でこれらを
+使うために、CST816D, QMI8658という名でクラスを用意していますので、
+容易に扱う事ができます。
 
 
-＜machikania-rl.zipファイルコンテンツ＞
+＜液晶のバックライト制御＞
 
-[rp2350_lcd_1_47]ディレクトリ
+液晶のバックライトの強度は、GPIO15で行われます。MachiKania でこれを制御するには、
+PWMをこのポートに割り当ててください。例えば、MACHIKAP.INI で
+
+  PWM4=15
+
+と記述すると、PWM4で制御することができます。
+
+＜machikania-rl2.zipファイルコンテンツ＞
+
+[rp2350_lcd_2]ディレクトリ
 　Raspberry Pi Pico 2 で使うバイナリーを格納
 　-phyllosoma.uf2
 　　MachiKania type P BASICシステム本体（PC connect機能対応版）
-　　PCとRP2350-LCD-1.47をUSB接続し書き込む
+　　PCとRP2350-LCD-2をUSB接続し書き込む
 　　PC connect機能により、USBケーブルで接続したPCからBASICプログラムを転送可能
 
 　-phyllosoma_kb.uf2
 　　MachiKania type P BASICシステム本体（USBキーボード接続対応版）
-　　PCとRP2350-LCD-1.47をUSB接続し書き込む
+　　PCとRP2350-LCD-2をUSB接続し書き込む
 　　内蔵エディタとUSBキーボードでBASICプログラムを直接編集、実行可能
 
 [pcconnect]ディレクトリ
@@ -212,16 +223,5 @@ MACHIKAP.INI
 ------------------------------------------------------------------------
 MachiKania type P BASICシステム改版履歴
 
-Pyllosoma 1.61/KM-1511 (2025.12.27)
-　・Waveshare RP2350-LCD-1.47に対応
-
-Phyllosoma 1.70/KM-1512 (2026.6.20)
-　・MachiKania USB ゲームパッドに対応
-　・対応するUSBキーボードプロトコルの種類を追加
-　・USBキーボードドライバにPCのターミナルソフトから直接文字コードで入力する機能を追加
-　・STRCMP()関数を追加
-　・文字列演算子(=, !=, <, <=, >, >=, AND, OR)を追加
-　・IFなどで文字列を条件式に取ることができるようにした
-　・年齢制限のあるアプリケーションの開発に対応
-　・液晶の向きをSYSTEM(30)で得られるようにした
-　・CLEARステートメントを追加
+Pyllosoma 1.7/KM-1512 (2026.6.20)
+　・Waveshare RP2350-Touch-LCD-2に対応
